@@ -285,9 +285,10 @@ def generate_sunrise_sunset_plot(lat, lon, title):
     )
 
     # Set the layout properties
+    tztitle = f' ({tz_str})'
     fig.update_layout(
         title={
-            'text': 'Sunrise and Sunset Times for ' + title if title else 'Sunrise and Sunset Times',
+            'text': 'Sunrise and Sunset Times for ' + title + tztitle if title else 'Sunrise and Sunset Times' + tztitle,
             'y':0.95,
             'x':0.5,
             'xanchor': 'center',
