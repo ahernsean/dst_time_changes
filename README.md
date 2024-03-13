@@ -14,6 +14,8 @@ This web application provides an interface to select a location and view the sun
 - Custom input fields for latitude, longitude, and a title for new locations.
 - Menu for selection of predefined locations
 
+A live, running demo on Glitch: [Demo site](https://internal-phase-penguin.glitch.me/)
+
 ## Installation
 
 Before running the application, you need to install the required Python packages. It is recommended to use a virtual environment.
