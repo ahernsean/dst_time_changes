@@ -37,9 +37,9 @@ def enter_location():
     if request.method == 'POST':
         selected_location = request.form.get('location-dropdown')
 
-    lat = ''
-    lon = ''
-    title = ''
+    lat = locations['Raleigh']['lat']
+    lon = locations['Raleigh']['lon']
+    title = locations['Raleigh']['title']
 
     if request.method == 'POST':
         selected_location = request.form.get('location-dropdown')
