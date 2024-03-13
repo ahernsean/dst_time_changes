@@ -6,7 +6,7 @@ This web application provides an interface to select a location and view the sun
 
 ## Features
 
-![Image of sunrise/sunset times for Raleigh, NC](Raleigh.PNG)
+![Image of sunrise/sunset times for Raleigh, NC](Raleigh.png)
 
 - Visualization of sunrise and sunset times across three scenarios: permanent standard time, current
    observance, and permanent daylight saving time.
