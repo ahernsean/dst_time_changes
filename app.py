@@ -27,7 +27,7 @@ def enter_location():
         'South Pole': {'lat': '-90', 'lon': '0', 'title': "South Pole"},
         'Null island': {'lat': '0', 'lon': '0', 'title': "Null Island"},
         'Istanbul': {'lat': '41.00341731671383', 'lon': '28.984699128656757', 'title': "Istanbul, Turkey"},
-        'Pittsburgh': {'lat': '40.43998536720357', 'lon': '-79.99695032749644', 'title': "Pittsburgh, Paleigh
+        'Pittsburgh': {'lat': '40.43998536720357', 'lon': '-79.99695032749644', 'title': "Pittsburgh, PA"},
         'TromsØ': {'lat': '69.64923536347172', 'lon': '18.954377736088254', 'title': "Tromsø, Norway"},
         'Pune': {'lat': '18.525233995738027', 'lon': '73.85747387515629', 'title': "Pune, India"},
         'Beijing': {'lat': '39.91478688875563', 'lon': '116.39459944227269', 'title': "Beijing, China"}
