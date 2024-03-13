@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import ephem
 import pytz
 import json
