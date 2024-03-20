@@ -1,4 +1,12 @@
 # -*- coding: utf-8 -*-
+
+"""
+This file contains a Flask application that allows users to select a location and view the sunrise and sunset times for that location.
+The application uses the ephem library to calculate the sunrise and sunset times based on the selected location's latitude and longitude.
+The selected location can be chosen from a dropdown menu or entered manually.
+The application also generates a plot of the sunrise and sunset times using the plotly library.
+"""
+
 import ephem
 import pytz
 import json
@@ -11,10 +19,19 @@ from flask import jsonify
 from flask import Flask, render_template, request
 from timezonefinder import TimezoneFinder
 
+# Flask application initialization
 app = Flask(__name__)
 
+# Route for selecting a location and displaying the sunrise and sunset times
 @app.route('/', methods=['GET', 'POST'])
 def enter_location():
+    """
+    Renders a form for selecting a location and displays the sunrise and sunset times for the selected location.
+
+    Returns:
+        str: The HTML content of the form and the sunrise/sunset plot.
+    """
+    # Location data
     locations = {
         'Raleigh': {'lat': '35.778573253959344', 'lon': '-78.63071172555289', 'title': "Raleigh, NC"},
         'Lebanon': {'lat': '43.642228293307404', 'lon': '-72.25019032094313', 'title': "Lebanon, NH"},
@@ -92,8 +109,15 @@ def enter_location():
         </script>
     '''
 
+# Route for displaying the sunrise and sunset times
 @app.route('/sunrise_sunset', methods=['GET'])
 def sunrise_sunset():
+    """
+    Calculates and displays the sunrise and sunset times for a given location.
+
+    Returns:
+        str: The HTML content of the sunrise and sunset plot.
+    """
     lat = request.args.get('lat')
     lon = request.args.get('lon')
     title = request.args.get('title')
@@ -106,6 +130,17 @@ def sunrise_sunset():
     return to_html(fig, full_html=False)
 
 def generate_sunrise_sunset_plot(lat, lon, title):
+    """
+    Generates a plot of the sunrise and sunset times for a given location.
+
+    Args:
+        lat (str): The latitude of the location.
+        lon (str): The longitude of the location.
+        title (str): The title of the location.
+
+    Returns:
+        plotly.graph_objects.Figure: The generated plot.
+    """
     # Set the observer's location
     observer = ephem.Observer()
     observer.lat = lat
