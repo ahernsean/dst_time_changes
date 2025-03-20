@@ -1,5 +1,5 @@
 ephem
-pytz
+tzdata
 requests
 Flask
 plotly

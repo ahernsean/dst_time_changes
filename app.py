@@ -8,7 +8,7 @@ The application also generates a plot of the sunrise and sunset times using the 
 """
 
 import ephem
-import pytz
+from zoneinfo import ZoneInfo
 import json
 import datetime
 import base64, io
@@ -153,7 +153,7 @@ def generate_sunrise_sunset_plot(lat, lon, title):
     # Get the timezone for the given latitude and longitude
     tf = TimezoneFinder()
     tz_str = tf.timezone_at(lat=float(lat), lng=float(lon))
-    local_tz = pytz.timezone(tz_str)
+    local_tz = ZoneInfo(tz_str)
 
     # Initialize lists to store the dates and times
     dates = []
